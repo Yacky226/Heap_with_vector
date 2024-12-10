@@ -3,13 +3,11 @@
 
 int main() {
     MinHeap<int> minHeap;
+    std::vector<int>v;
+    srand(time(0));
+    for (int i = 0; i < 100000000; i++)  v.push_back(rand() % 100);
 
-    // Insère des valeurs dans le tas
-    minHeap.insert(10);
-    minHeap.insert(20);
-    minHeap.insert(5);
-    minHeap.insert(15);
-    minHeap.insert(30);
+    for (auto it = v.begin(); it != v.end(); it++) minHeap.insert(*it);
 
     std::cout << "MinHeap content: ";
     minHeap.print();

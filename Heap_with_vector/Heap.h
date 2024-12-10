@@ -3,17 +3,18 @@
 #include <stdexcept>
 #include <iostream>
 
-// Classe pour le tas binaire minimum (MinHeap)
+// Classe pour le tas binaire minimum
 template <typename T>
 class MinHeap {
 private:
-    std::vector<T> heap; // Conteneur pour stocker les éléments du tas.
+   
+    std::vector<T> heap; // Conteneur pour stocker les éléments du tas
 
-    // Réorganise le tas en remontant un élément.
-    void heapifyUp(int index);
+    // Réorganise le tas en remontant un élément
+    void heapMontant(int index);
 
-    // Réorganise le tas en descendant un élément.
-    void heapifyDown(int index);
+    // Réorganise le tas en descendant un élément
+    void heapDescendant(int index);
 
 public:
     MinHeap(); // Constructeur

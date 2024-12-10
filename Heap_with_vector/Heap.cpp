@@ -2,11 +2,14 @@
 
 // Constructeur
 template <typename T>
-MinHeap<T>::MinHeap() = default;
+MinHeap<T>::MinHeap() {
+    
+}
 
 // Réorganise le tas en remontant un élément
 template <typename T>
-void MinHeap<T>::heapifyUp(int index) {
+void MinHeap<T>::heapMontant(int index)
+{
     while (index > 0) {
         int parentIndex = (index - 1) / 2;
         if (heap[index] < heap[parentIndex]) {
@@ -21,7 +24,8 @@ void MinHeap<T>::heapifyUp(int index) {
 
 // Réorganise le tas en descendant un élément.
 template <typename T>
-void MinHeap<T>::heapifyDown(int index) {
+void MinHeap<T>::heapDescendant(int index) 
+{
     int size = heap.size();
     while (index < size) {
         int leftChild = 2 * index + 1;
@@ -49,7 +53,7 @@ void MinHeap<T>::heapifyDown(int index) {
 template <typename T>
 void MinHeap<T>::insert(T value) {
     heap.push_back(value);
-    heapifyUp(heap.size() - 1);
+    heapMontant(heap.size() - 1);
 }
 
 // Supprime et renvoie la valeur minimale 
@@ -62,7 +66,7 @@ T MinHeap<T>::extractMin() {
     T minValue = heap[0];
     heap[0] = heap.back();
     heap.pop_back();
-    heapifyDown(0);
+    heapDescendant(0);
 
     return minValue;
 }
