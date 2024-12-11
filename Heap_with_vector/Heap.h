@@ -15,6 +15,7 @@ private:
 
     // Réorganise le tas en descendant un élément
     void heapDescendant(int index);
+    bool recherher(T value,int index);
 
 public:
     MinHeap(); // Constructeur
@@ -24,10 +25,11 @@ public:
 
     // Supprime et renvoie la valeur minimale
     T extractMin();
-
+ 
     // Renvoie la valeur minimale  sans la supprimer
     T getMin() const;
-
+    //Chercher une valeur
+    void chercherValue(T value);
     // Affiche le contenu du tas
     void print() const;
 
